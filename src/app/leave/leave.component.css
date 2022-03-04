@@ -1,0 +1,113 @@
+.content{
+  margin-top: 20px;
+  width: 100%;
+}
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+h4{
+  font-size: 20px;
+  height: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+.filter-Date{
+  width: 100px !important;
+}
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 80% !important;
+  }
+    td, th {
+    width: 12%;
+  }  
+  .mat-cell {
+    padding: 8px 8px 8px 0;
+  }
+    /* for xx-small screen */
+    @media (max-width: 400px) { 
+      *{
+        overflow: scroll;
+      }
+table{
+  width: 600px !important;
+  padding: 10px;
+}
+td, th {
+  width: 20% !important ;
+  font-size: 8px;
+  word-spacing: 4px;
+  padding-right: 5px !important ; 
+}
+
+mat-icon{
+  font-size: 10px ;
+}
+mat-paginator{
+  width: 400px !important;
+}
+
+
+    }
+
+  /* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px){
+  *{
+    overflow: scroll;
+  }
+table {
+    width: 500px !important;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 88%;
+  }
+  td, th {
+    width: 15% ;
+    font-size: 10px;
+    word-spacing: 3px;
+    margin-right: 8px !important; 
+  }
+
+  mat-icon{
+    font-size: 15px ;
+  }
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .content{
+    margin-top: 20px;
+    width: 100%;
+}
+.mat-elevation-z8 {
+    width: 80%;
+    margin: left 100px;
+    overflow: hidden;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100% !important;
+  }
+     th,td{
+      padding-right: 10px;
+    width: 30% !important;
+    margin-right: 12px;
+  }
+ 
+}
+mat-column{
+  border-right: 1px solid black;
+}
+}

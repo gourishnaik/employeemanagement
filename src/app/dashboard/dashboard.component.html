@@ -1,0 +1,125 @@
+<mat-toolbar color="primary" >
+  <h4>Employee Dashboard</h4>
+</mat-toolbar>
+<br>
+<div class="container  h-100">
+ 
+               
+
+  <form  [formGroup]="exform"> 
+  
+       
+      <div class="container h-100"> 
+        <div class="row d-flex justify-content-center align-items-center h-100"> 
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">create</h2>
+<!--firstname-->
+    <div class ="form-group">
+        <div >
+            <label class="col-form-label">First Name:</label>
+            <input  type="text"formControlName="firstname"maxlength="15"name="username"  class="form-control">
+            <small *ngIf="exform.get('firstname')?.invalid && exform.get('firstname')?.touched" class="text-danger">First Name is Required</small> 
+          </div>
+
+
+<!---lastname-->
+<div class ="form-group">
+    <div >
+        <label class="col-form-label">Last Name:</label>
+        <input  type="text"formControlName="lastname"maxlength="15"name="username"  class="form-control">
+        <small *ngIf="exform.get('lastname')?.invalid && exform.get('lastname')?.touched" class="text-danger">Last Name is Required</small> 
+      </div>
+
+
+<!---email-->
+
+<div >
+    <label class="col-form-label">Email:</label>
+    <input formControlName="email" type="text" class="form-control" >
+    <small *ngIf="exform.get('email')?.invalid && exform.get('email')?.touched" class="text-danger">please specify right email id</small> 
+  </div>
+  
+<!--password-->
+
+<div >
+    <label class="col-form-label">password:</label>
+    <input formControlName="password" type="password" class="form-control" >
+    <small *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched" class="text-danger">Enter a valid password</small>
+    <small *ngIf="hasError('password', 'pattern') "class="text-danger">Password should be strong!</small>
+  </div>
+  
+  <!---role-->
+
+  <div >
+    <label class="col-form-label">role:</label>
+    <input formControlName="role" type="text" class="form-control">
+    <small *ngIf="exform.get('role')?.invalid && exform.get('role')?.touched" class="text-danger">please mention your role</small> 
+  </div>
+  
+
+
+<!---designation-->
+
+<div >
+  <label class="col-form-label">designation:</label>
+  <input formControlName="designation" type="text" class="form-control">
+  <small *ngIf="exform.get('designation')?.invalid && exform.get('designation')?.touched" class="text-danger">please mention your designation</small> 
+</div>
+</div>
+
+
+
+         
+<!----datepicker-->   
+<label class="col-form-label">date of joining:</label>
+
+    <div class="d-flex justify-content-center ">
+  <mat-form-field style=width:800px;>
+  <input formControlName="date"matInput name="date"[matDatepicker]="datepicker">
+  <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+  <mat-datepicker #datepicker></mat-datepicker>
+ <small *ngIf="exform.get('date')?.invalid && exform.get('date')?.touched" class="text-danger">please specify date</small>
+ 
+</mat-form-field>
+</div>
+
+
+
+<!--button container
+<div class="container">
+  <div class="row">
+     <div class='col-sm-6'>
+        </div>                   -->
+  
+        <!---buttons-->
+
+   <button (click)="adduser()" *ngIf="!isEdit"[disabled]="exform.invalid" class="btn btn-success ">Add</button> &nbsp;
+   
+   <button routerLink="/elist" type ="button" class ="btn btn-danger ">view</button>&nbsp;
+   <button routerLink="/" type ="button" class ="btn btn-dark ">Home</button>
+      
+  
+  
+  
+  
+  
+  
+  </div>
+        
+      
+  <div>
+  </div>
+  </div>
+  
+  </div>     
+                                
+                                
+                                   
+                    
+                    
+                    
+                     
+                    
+        

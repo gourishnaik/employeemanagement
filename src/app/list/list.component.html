@@ -1,0 +1,155 @@
+
+<!---navbar
+<nav class="navbar navbar-expand-lg nav-fill  navbar-primary bg-primary">
+  <h4 class="text-light primary py-4" >employee Timesheet list   </h4> 
+</nav>     
+<br><br> -->
+<mat-toolbar color="primary" >
+  <h4>Employee Timesheet list </h4>
+</mat-toolbar>
+<br><br>
+
+<!--- timesheet list-->
+<div >
+  <div class="container">
+    <form role="form" >
+  <fieldset>	
+  
+  <h1>Timesheet list</h1>
+  <hr>
+
+  <!---searchbox-->
+  <mat-form-field appearance="standard">
+    <input matInput name="Search"[(ngModel)]="searchkey"placeholder="Search"#input>
+  </mat-form-field>
+  <!--create button-->
+<button routerLink="/timesheet" id="cancel"type ="button" class ="btn btn-success">create</button>
+
+<!--table contents-->
+<div class="table-responsive"> 
+<table class="table" id="users">
+  <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Project name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Hours</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  <tr *ngFor ="let user of alluser | filter:searchkey |paginate:{ itemsPerPage:10, currentPage:page,totalItems:totalLength}">
+
+<td>{{user.username}}</td>
+<td>{{user.fromdate| date:'d/M/yy'}}</td>
+<td>{{user.projectname}}</td>
+<td>{{user.description}}</td>
+<td>{{user.fromtime}}</td>
+<td><button mat-icon-button (click)="edituser(user)" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+  <mat-icon color="primary">edit</mat-icon>
+</button></td>
+<td><button mat-icon-button (click)="deleteuser(user)" >
+  <mat-icon color="warn" >delete</mat-icon>
+</button>  </td>
+</tr>
+     </tbody>
+    </table>
+</div>
+  
+
+
+  <!--pagination-->
+  <div class="pagination ">
+  <pagination-controls class="table-responsive"(pageChange)="page= $event"></pagination-controls>
+</div>
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+   
+        <h4 class="modal-title" id="exampleModalLabel">Employee timelist</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form  [formGroup]="employeeform">
+
+            <!---username-->
+            <div class ="form-group">
+              <mat-form-field [style.width.px]=300>
+              <mat-label>Enter your username</mat-label><br>
+              <input  type="text"matInput placeholder="enter your username"formControlName="username" maxlength="15"name="username"[(ngModel)]="userobj.username" required >
+              <small *ngIf="employeeform.get('username')?.invalid && employeeform.get('username')?.touched" class="text-danger"><br><br>username is Required</small> 
+            </mat-form-field>
+             <br>  
+              </div>
+              
+          <!---date-->
+          <div class ="form-group">
+          &nbsp; &nbsp; <mat-label style="font-size: 12px">Date*:</mat-label> <br><br>
+        
+   &nbsp;&nbsp;&nbsp;<input  formControlName="fromdate" placeholder="Select date" type ="date"[style.width.px]=280 name="fromdate" [(ngModel)]="userobj.fromdate" >
+<small *ngIf="employeeform.get('fromdate')?.invalid && employeeform.get('fromdate')?.touched" class="text-danger"><br><br>please specify date</small>
+<mat-datepicker #datepicker></mat-datepicker>
+</div>
+<br>
+ <!----project-->
+    <div class ="form-group">
+    <div>
+      &nbsp;  <mat-label style="font-size: 12px" for="myListOptions">Project Name*:</mat-label><br><br>
+      &nbsp;&nbsp; <select [style.width.px]=280 formControlName="projectname"[(ngModel)]="userobj.projectname" >
+        <option>angular</option> 
+        <option>React</option> 
+        <option>javascript<option>   
+      </select>
+      <small *ngIf="employeeform.get('projectname')?.invalid && employeeform.get('projectname')?.touched" class="text-danger"><br><br>projectname is Required</small>
+    </div>
+  </div>
+    <br><br>
+ 
+      <!--description-->
+<div class="form-group">
+  <mat-form-field [style.width.px]=300>
+  <mat-label>Description</mat-label>
+  <textarea matInput  formControlName="description" type="text"name="description"maxlength="35" placeholder="Description"[(ngModel)]="userobj.description" required ></textarea>
+  <small *ngIf="employeeform.get('description')?.invalid && employeeform.get('description')?.touched" class="text-danger"><br>description is must Required</small>
+</mat-form-field> <br>
+</div>
+
+ 
+
+
+<!--hours-->
+<mat-form-field [style.width.px]=300>
+  <mat-label>Number of hours</mat-label><br>
+  <input formControlName="fromtime"name="fromtime" [(ngModel)]="userobj.fromtime" mdbInput required  type="number" matInput placeholder="Number of hours">
+  <small *ngIf="employeeform.get('fromtime')?.invalid && employeeform.get('fromtime')?.touched" class="text-danger">please specify Hours</small>
+</mat-form-field>
+
+<br>
+    </form>
+          </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel"*ngIf="isEdit"[disabled]="employeeform.invalid" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="adduser()" *ngIf="!isEdit"[disabled]="employeeform.invalid"class="btn btn-primary">Add</button>
+        <button type="button" (click)="updateuser()" *ngIf="isEdit"[disabled]="employeeform.invalid"class="btn btn-primary"data-bs-dismiss="modal">Update</button>
+      </div>
+    </div>
+  </div>
+  </div>
+

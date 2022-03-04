@@ -1,0 +1,34 @@
+.leave{
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin-top: 50px !important;
+    margin: 0 auto;
+    position: relative;
+}
+.mat-toolbar.mat-primary {
+    background: #007bff;
+    color: #fff;
+  }
+
+h4{
+    text-align: center;
+}
+h4{
+    font-size: 20px;
+    height: auto;
+    width: 100%;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+}
+.btnCreate{
+    background: black;
+    color: white;
+    border-radius: 10px;
+    }
+  
+    /* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px){
+
+}

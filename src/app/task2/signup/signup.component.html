@@ -1,0 +1,99 @@
+<mat-toolbar color="primary" >
+    <h4>SIGNUP PAGE </h4>
+  </mat-toolbar>
+
+
+
+<mat-card>
+    <mat-card-title>
+        Sign Up
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="signupForm">
+            <!-- fisrt name -->
+            <mat-form-field appearance="standard">
+                <mat-label>Enter Name</mat-label>
+                <input type="text" placeholder="Name" formControlName="Name" matInput>
+            </mat-form-field>
+            <!-- error handle fisrtname -->
+            <div *ngIf="submit && f['Name']['errors']" >
+            <mat-error *ngIf="submit && f['Name']['errors']['required']" >
+                first name is required
+            </mat-error>
+            <mat-error *ngIf="f['Name']['errors']&&f['Name']['errors']['minlength'] ">
+                Name must have 6 characters
+            </mat-error>
+            <mat-error *ngIf="f['Name']['errors']&& f['Name']['errors']['maxlength'] ">
+                Name only allowed 20 characters
+            </mat-error>
+        </div>
+
+            <!-- last name -->
+            <mat-form-field appearance="standard">
+                <mat-label>Enter lastname (optional) </mat-label>
+                <input type="text" placeholder="lastname" formControlName="password" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Enter Email</mat-label>
+                <input type="email" placeholder="Email Id" formControlName="emailid" matInput>
+            </mat-form-field>
+            <!-- email errors handle-->
+            <div *ngIf="submit && f['emailid']['errors'] " >
+                <mat-error *ngIf="f['emailid']['errors'] ['required']">
+                    email id must required
+                </mat-error>
+                <mat-error *ngIf="f['emailid']['errors'] ['email']">
+                    email id not valid
+                </mat-error>
+                <mat-error *ngIf="submit&&f['emailid']['errors'] ['isTaken']">
+                    email id already exust
+                </mat-error>
+            </div>
+
+         <!-- password -->
+            <mat-form-field appearance="standard">
+                <mat-label>Enter Password</mat-label>
+                <input type="password" placeholder="Password" formControlName="password" matInput>
+            </mat-form-field>
+            <!-- password error handle -->
+            <div *ngIf="submit &&f['password']['errors'] ">
+                <mat-error *ngIf="f['password']['errors']['required']" >
+                    password must required
+                </mat-error>
+                <mat-error *ngIf="f['password']['errors']&& f['password']['errors']['minlength']" >
+                    password must have 7 charact
+                </mat-error>
+            </div>
+            <!-- mobile number -->
+            <mat-form-field appearance="standard">
+                <mat-label>Enter mobile</mat-label>
+                <input type="number" placeholder="mobile" formControlName="mobile"  maxlength = "10" 
+                oninput="javascript: if (this.value.length > this.maxLength) //for keeping 10 digit phone number & not exceeding over 10
+                this.value = this.value.slice(0, this.maxLength);"
+                matInput   >
+            </mat-form-field>
+            <!-- mobil error handle -->
+            <div *ngIf="submit &&f['mobile']['errors'] " >
+                <mat-error *ngIf="f['mobile']['errors'] ['required']" >mobile number is required</mat-error>
+                <mat-error *ngIf="f['mobile']['errors'] ['minlength']" >mobile number is only 10 numbers</mat-error>
+                <mat-error *ngIf="f['mobile']['errors'] ['maxlength']" >mobile number is only 10 numbers</mat-error>
+            </div>
+
+            <!-- designation -->
+            <mat-form-field appearance="standard">
+                <mat-label>Enter designation</mat-label>
+                <input type="text" placeholder="designation" formControlName="designation" matInput>
+            </mat-form-field>
+            <mat-error *ngIf="submit &&f['designation']['errors']&&f['designation']['errors']['required'] " >
+                designation is required
+            </mat-error>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="onSubmit(signupForm.value)" color="accent">Register</button>
+        <a href="" [routerLink]="['/login']" style="text-transform: capitalize;"> existing user? login here</a>
+
+    </mat-card-actions>
+  
+</mat-card>

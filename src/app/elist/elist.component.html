@@ -1,0 +1,172 @@
+
+<!---navbar
+<nav class="navbar navbar-expand-lg nav-fill  navbar-primary bg-primary">
+  <h4 class="text-light primary py-4" >employee dashboard list   </h4> 
+</nav>     
+<br><br>-->
+<mat-toolbar color="primary" >
+  <h4>Employee dashboard list </h4>
+</mat-toolbar>
+<br><br>
+
+
+
+ <!--- dashboard list-->
+
+
+<div >
+  <div class="container">
+    <form role="form" >
+  <fieldset>	
+  
+    
+    <h1>Dashboard list</h1>
+    <hr>
+
+     <!--create button-->
+<button routerLink="/dashboard" id="cancel1"type ="button" class ="btn btn-success">create</button>
+<div>
+    
+<!---searchbox-->
+<mat-form-field appearance="standard">
+  <input matInput name="Search"[(ngModel)]="searchkey"placeholder="Search"#input>
+</mat-form-field>
+
+
+
+
+ <!--table contents-->
+ <div class="table-responsive"> 
+<table class="table" id="users">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Role</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Date of joining</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>   
+
+        <tr *ngFor ="let user of alluser | filter:searchkey |paginate:{ itemsPerPage:10, currentPage:page,totalItems:totalLength}">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.designation}}</td>
+            <td>{{user.date| date:'d/M/yy'}}</td>
+            <td><button mat-icon-button (click)="edituser(user)" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+              <mat-icon color="primary">edit</mat-icon>
+            </button></td>
+            <td><button mat-icon-button (click)="deleteuser(user)" >
+              <mat-icon color="warn" >delete</mat-icon>
+            </button>  </td>
+           
+        </tr> 
+      </tbody>
+    </table>
+</div>
+  
+  </div >
+
+  <!--pagination-->
+  <div class="pagination">
+  <pagination-controls class="table-responsive" (pageChange)="page= $event"></pagination-controls>
+</div>
+
+</fieldset>
+        <!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+   
+        <h4 class="modal-title" id="exampleModalLabel">Employee Dashboard list</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form  [formGroup]="exform">
+
+            <!---firstname-->
+            <div class ="form-group">
+              <mat-form-field [style.width.px]=300>
+              <mat-label>Enter your username</mat-label>
+              <input  type="text"matInput placeholder="enter your firstname"formControlName="firstname" maxlength="12"name="username"[(ngModel)]="userobj1.firstname" required >
+              <small *ngIf="exform.get('firstname')?.invalid && exform.get('firstname')?.touched" class="text-danger">First Name is Required</small> 
+             </mat-form-field>
+              </div>
+              <br>
+             <!---lastname-->
+           <div class ="form-group">
+           <mat-form-field [style.width.px]=300>
+           <mat-label>Enter your lastname</mat-label>
+           <input  type="text"matInput placeholder="enter your lastname"formControlName="lastname" maxlength="12"name="username"[(ngModel)]="userobj1.lastname" required >
+           <small *ngIf="exform.get('lastname')?.invalid && exform.get('lastname')?.touched" class="text-danger">Last Name is Required</small> 
+          </mat-form-field>
+           </div>
+            <br>
+              <!---email-->
+              <div class ="form-group">
+                <mat-form-field [style.width.px]=300>
+                <mat-label>Enter your email</mat-label>
+                <input  type="email"matInput placeholder="enter your email"formControlName="email" maxlength="40"name="username"[(ngModel)]="userobj1.email" required >
+                <small *ngIf="exform.get('email')?.invalid && exform.get('email')?.touched" class="text-danger">please specify right email id</small> 
+              </mat-form-field>
+                </div>
+                <br>
+          <!---password-->
+         <div class ="form-group">
+         <mat-form-field [style.width.px]=300>
+        <input  type="password"matInput placeholder="enter your password"formControlName="password" name="password"[(ngModel)]="userobj1.password"required >
+        <small *ngIf="exform.get('password')?.invalid && exform.get('password')?.touched" class="text-danger">enter a valid password</small> 
+        </mat-form-field>
+        </div>
+         <br>
+             <!---role-->
+             <div class ="form-group">
+              <mat-form-field [style.width.px]=300>
+              <mat-label>Enter your role</mat-label>
+              <input  type="text"matInput placeholder="enter your role"formControlName="role" maxlength="12"name="username"[(ngModel)]="userobj1.role" required >
+              <small *ngIf="exform.get('role')?.invalid && exform.get('role')?.touched" class="text-danger">please mention your role</small> 
+            </mat-form-field>
+              </div>
+               <br>
+               <!---designation-->
+               <div class ="form-group">
+                <mat-form-field [style.width.px]=300>
+                <mat-label>Enter your designation</mat-label>
+                <input  type="text"matInput placeholder="enter your designation"formControlName="designation"maxlength="12"name="username"[(ngModel)]="userobj1.designation"required >
+                <small *ngIf="exform.get('designation')?.invalid && exform.get('designation')?.touched" class="text-danger">please mention your designation</small> 
+              </mat-form-field>
+                </div>
+                 <br>
+
+
+                 
+              <!---date-->
+              <div class ="form-group">
+             
+        &nbsp;&nbsp;&nbsp;<mat-label style="font-size: 12px">specify date of joining*</mat-label><br><br>
+        &nbsp;&nbsp;&nbsp;<input formControlName="date" type ="date"[style.width.px]=280 name="date" [(ngModel)]="userobj1.date" >
+              <small *ngIf="exform.get('date')?.invalid && exform.get('date')?.touched" class="text-danger">please specify date</small>
+            
+            </div>
+        
+<br><br>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="adduser()" *ngIf="!isEdit"[disabled]="exform.invalid"class="btn btn-primary">Add</button>
+        <button type="button" (click)="updateuser()" *ngIf="isEdit"[disabled]="exform.invalid"class="btn btn-primary" data-bs-dismiss="modal" >Update</button>
+      </div>
+    </div>
+  </div>
+  </div>

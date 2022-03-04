@@ -1,0 +1,71 @@
+<mat-toolbar color="primary" >
+  <h4>leave calender</h4>
+</mat-toolbar>
+
+
+
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center mb-5">Leave Calender</h2>
+              <form [formGroup]="leaveCalenderForm" (ngSubmit)="leaveCalender()">
+  
+                <div class="d-flex justify-content-center">
+                  <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                   <mat-label>Year</mat-label>
+                     <input type="year" matInput formControlName="year" placeholder="Ex. 2022">
+                    <mat-error *ngIf="hasError('year', 'required')">Year is required!</mat-error>
+                    <mat-error *ngIf="hasError('year', 'maxlength')">You have more than 4 characters!</mat-error>
+                    <mat-error *ngIf="hasError('year', 'minlength')">Please enter minimum 4 characters!</mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="d-flex justify-content-center">
+                    <mat-form-field appearance="fill" style=width:500px;>
+                      <mat-label>Choose date</mat-label>
+                       <input matInput [matDatepicker]="dp" formControlName="date" placeholder="Ex. 02/07/1996">
+                       <mat-error *ngIf="hasError('date', 'required')">Date is required!</mat-error>
+                          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                          <mat-datepicker #dp></mat-datepicker>
+                    </mat-form-field>
+                </div>
+  
+                <div class="d-flex justify-content-center">
+                  <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                    <mat-label>Reason</mat-label>
+                      <input type="reason" matInput formControlName="reason" placeholder="Ex. What is reason for leave">
+                      <mat-error *ngIf="hasError('reason', 'required')">Reason is required!</mat-error>
+                    <mat-error *ngIf="hasError('reason', 'maxlength')">You have more than 60 characters!</mat-error>
+                   </mat-form-field>
+                </div>
+  
+                <div class="d-flex justify-content-center">
+                  <mat-form-field appearance="fill" style=width:500px;>
+                   <mat-label>Select Type</mat-label>
+                      <mat-select formControlName="type">
+                          <mat-option value="Optional" >Optional</mat-option>
+                             <mat-option value="Mandatory">Mandatory</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="hasError('type', 'required')">Type is required!</mat-error>
+                    </mat-form-field>
+                </div>
+                <br>
+             
+                  <button type="submit"class="btn btn-success">Create</button> &nbsp;
+              
+              
+      
+            
+              <button type ="button"(click)="view()" class="btn btn-danger ">View  </button>&nbsp;
+
+            
+              <button routerLink="/"  type ="button" class="btn btn-dark ">Home </button>&nbsp;
+            </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+

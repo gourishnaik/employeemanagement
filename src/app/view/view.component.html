@@ -1,0 +1,123 @@
+<mat-toolbar color="primary" >
+  <h4>leave  </h4>
+</mat-toolbar>
+
+
+<br>
+<section class="app-container" style="text-align:center ">
+   <h1>
+         Leave Calender
+   </h1>
+</section>
+<div class="container">
+ <div class="inside" style=display:block;>
+   <mat-form-field [formGroup]="leaveCalenderSearchForm" [style.width.%]="85">
+     <mat-icon matSuffix >search</mat-icon>
+     <input  matInput type="search" placeholder="search year here..." class="search-input" formControlName="year" [(ngModel)]="data">
+   </mat-form-field>&nbsp;&nbsp;
+   <button (click)="createPage()" class="btn btn-success float-right" >Create</button>
+ </div>
+   <br>
+   <div class="table-responsive"> 
+         <table class="table table-striped">
+           <thead>
+               <tr>
+                 <th>Sl no</th>
+                <!--  <th>ID</th> -->
+                 <th>Year</th>
+                 <th>Choose Date</th>
+                 <th>Reason</th>
+                 <th>Type</th>
+                 <th>Edit details</th>
+                 <th>Delete details</th>
+               </tr>
+           </thead>
+           <tbody *ngIf="( leave | filter : data) as leave">
+               <tr *ngFor="let item of leave ;let i=index">
+               <td  >{{ i+1 }}</td>
+              <!--  <td  >{{ item.id }}</td> -->
+               <td  >{{ item.year }}</td>
+               <td >{{ item.date | date : "dd/MM/yyyy"}}</td>
+               <td >{{ item.reason }}</td>
+               <td >{{ item.type }}</td>
+               <td ><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm text-black btn-info" (click)="editData(item,item.id)"><mat-icon>create</mat-icon></button></td>
+               <td ><button class="btn btn-sm text-white btn-danger" (click)="deleteData(item,item.id)"><mat-icon>delete_sweep</mat-icon></button></td>
+               </tr>
+               <tr *ngIf="leave.length=== 0" >No Data Found</tr>  
+           </tbody>
+         </table>
+       </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" >
+ <div class="modal-content">
+   <div class="modal-header">
+     <h4 class="modal-title" id="exampleModalLabel">Leave Calender</h4>
+     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+
+
+   <div class="modal-body">
+     <form [formGroup]="leaveCalenderModalForm">
+
+       <div class="d-flex ">
+         <mat-form-field class="example-full-width" style=width:300px;>
+          <mat-label>Year</mat-label>
+            <input type="year" matInput formControlName="year" placeholder="Ex. 2022">
+            <mat-error *ngIf="hasError('year', 'required')">Year is required</mat-error>
+            <mat-error *ngIf="hasError('year', 'maxlength')">You have more than 4 characters</mat-error>
+            <mat-error *ngIf="hasError('year', 'minlength')">Please enter minimum 4 characters!</mat-error>
+         </mat-form-field>
+       </div>
+
+
+      
+       <br>
+       
+         <mat-label style="font-size: 12px" >Choose date *:</mat-label><br>
+        <input formControlName="date" type ="date"[style.width.px]=300 name="fromdate" >
+    <mat-error *ngIf="hasError('date', 'required')">Date is required!</mat-error>
+    <mat-datepicker #datepicker></mat-datepicker>
+ 
+<br>
+  <br>
+
+       <div class="d-flex  ">
+         <mat-form-field class="example-full-width" style=width:300px;>
+           <mat-label>Reason</mat-label>
+             <input type="reason" matInput formControlName="reason" placeholder="Ex. What is reason for leave">
+             <mat-error *ngIf="hasError('reason', 'required')">Reason is required!</mat-error>
+             <mat-error *ngIf="hasError('reason', 'maxlength')">You have more than 60 characters!</mat-error>
+          </mat-form-field>
+       </div>
+
+        
+       
+       <div >
+         <mat-label  style="font-size: 12px" for="myListOptions">Select Type*</mat-label> <br>
+      <select [style.width.px]=300 formControlName="type" ><br>
+          <option>Optional</option> 
+          <option>Mandatory</option>       
+        </select>
+        <mat-error *ngIf="hasError('type', 'required')">Type is required!</mat-error>
+     
+      </div>
+    
+
+
+
+
+     </form>
+     <br>
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+     <button type="button" class="btn btn-primary"(click)="updateUserData(leaveCal)"  data-bs-dismiss="modal">Update</button>
+   </div>
+ </div>
+</div>
+</div>

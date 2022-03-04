@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" >
+  <h4>Employee timesheet view</h4>
+</mat-toolbar>
+
+
+<div class="container">
+  <div style="overflow-x:auto; margin-top: 30px">
+    <!-- <button class="btn btn-success" routerLink="/create"><i class="fa fa-plus"
+        style="font-size:20px;color:orange"></i>&nbsp; CREATE</button> -->
+
+      
+    <div class="m-3 fs-5">
+      <small *ngIf="delete_success" class="success-msg fw-bold">Record deleted successfully
+        <span><i class="fa fa-check-circle" style="color:green;"></i></span> </small>
+    </div>
+    <button routerLink="/create1" mat-raised-button color="accent"  matBadge="+" matBadgePosition="after" matBadgeColor="primary"> create</button><br><br>
+    <table class="table shadow-sm bg-white rounded">
+
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Project</th>
+          <th scope="col">Number of Hrs</th>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of emp_timesheet">
+          <td>{{ items.emp_name }}</td>
+          <td>{{ items.project }}</td>
+          <!-- <td>{{ items.from_time | date:'shortTime' }}</td>
+                   <td>{{ items. to_time | date:'shortTime' }}</td> -->
+          <td>{{ items.no_of_hrs }} hrs</td>
+         
+          <!-- <td>{{ items.date | date:'shortDate' }}</td> -->
+          <td>{{ items.date | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ items.description }}</td>
+          <td class="text-center">
+            <!-- <a routerLink="/edit/{{items.id}}" class="btn btn-secondary"> <i class="fa fa-pencil"></i></a> -->
+            <a routerLink="/edit/{{items.id}}"> <mat-icon>edit</mat-icon></a>
+            <a class="ms-4" (click)="deleteSelectedData(items.id)"><mat-icon color="warn">delete</mat-icon></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

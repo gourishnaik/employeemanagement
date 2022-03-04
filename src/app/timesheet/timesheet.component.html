@@ -1,0 +1,205 @@
+
+<mat-toolbar color="primary" >
+  <h4> employee timesheet </h4>
+</mat-toolbar>
+<br>
+<div class="container   h-100">
+<form  [formGroup]="employeeform"> 
+  <div class="container h-100"> 
+    <div class="row d-flex justify-content-center align-items-center h-100"> 
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center mb-5">create</h2>
+<div class ="form-group">
+  <div class class="d-flex justify-content-center ">
+  <mat-form-field class="example-full-width" style=width:500px;>
+  <mat-label>Enter your username</mat-label>
+  <input  type="text"matInput placeholder="enter your username"formControlName="username" maxlength="15"name="username"[(ngModel)]="userobj.username" required >
+  <small *ngIf="employeeform.get('username')?.invalid && employeeform.get('username')?.touched" class="text-danger"><br><br>username is Required</small> 
+ </mat-form-field>
+  </div>
+</div>
+  <!----datepicker-->          
+  <div class ="form-group">
+    <div class class="d-flex justify-content-center  ">
+  <mat-form-field class="example-full-width" style=width:500px; >
+  <mat-label>Date</mat-label>
+  <input formControlName="fromdate"matInput [min]="minDate" [max]="maxDate" name="fromdate"[matDatepicker]="datepicker"placeholder="Select date"[(ngModel)]="userobj.fromdate">
+  <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+  <mat-datepicker #datepicker></mat-datepicker>
+  <small *ngIf="employeeform.get('fromdate')?.invalid && employeeform.get('fromdate')?.touched" class="text-danger"><br><br>please specify date</small>
+  </mat-form-field>
+  </div>
+</div>   
+  <!----project-->
+<div class ="form-group">
+  <div class class="d-flex justify-content-center">
+  <mat-form-field class="example-full-width" style=width:500px; >      
+  <mat-label >project Name</mat-label>
+  <mat-select formControlName="projectname"name="projectname"[(ngModel)]="userobj.projectname">
+  <mat-option value ="angular">Angular</mat-option>
+  <mat-option value ="React">React</mat-option>
+  <mat-option value ="javascript">javascript</mat-option>
+  </mat-select>
+  <small *ngIf="employeeform.get('projectname')?.invalid && employeeform.get('projectname')?.touched" class="text-danger"><br><br>projectname is Required</small>
+</mat-form-field>
+ </div>
+</div>
+<!--description-->
+<div class="form-group">
+  <div class class="d-flex justify-content-center ">
+  <mat-form-field class="example-full-width" style=width:500px;  >
+  <mat-label>Description</mat-label>
+  <textarea matInput  formControlName="description" type="text"name="description"maxlength="35" placeholder="Description"[(ngModel)]="userobj.description" required ></textarea>
+  <small *ngIf="employeeform.get('description')?.invalid && employeeform.get('description')?.touched" class="text-danger"><br>description is must Required</small>
+</mat-form-field> <br>
+</div>
+</div>
+
+<!--hours-->
+<div class class="d-flex justify-content-center">
+  <mat-form-field class="example-full-width" style=width:500px;>
+      <mat-label>Number of hours</mat-label>
+      <input formControlName="fromtime"name="fromtime" [(ngModel)]="userobj.fromtime" mdbInput required  type="number" matInput placeholder="Number of hours">
+      <small *ngIf="employeeform.get('fromtime')?.invalid && employeeform.get('fromtime')?.touched" class="text-danger"><br><br>please specify Number of Hours</small>
+    </mat-form-field>
+    <br><br>
+</div>
+
+    
+
+
+<!--button container-->
+<div class="container">
+  <div class="row">
+     <div class='col-sm-6'>
+        </div>
+     
+<!---buttons-->
+
+   <button (click)="adduser()" *ngIf="!isEdit"[disabled]="employeeform.invalid" class="btn btn-success "
+   >Add</button> &nbsp;
+  
+   <button routerLink="/list" type ="button" class ="btn btn-danger ">view</button>&nbsp;
+   <button routerLink="/" type ="button" class ="btn btn-dark ">Home</button>
+  
+<div>
+</div>
+
+
+
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 
+
+
+
+
+		
+
+            
+			
+               
+
+
+
+ 

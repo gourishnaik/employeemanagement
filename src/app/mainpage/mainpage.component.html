@@ -1,0 +1,99 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sideNav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h4>EMPLOYEE MANAGEMENT</h4>
+  </mat-toolbar>
+
+  
+  
+  <mat-sidenav-container > 
+    <div class="hero-banner">
+        <div class="hero-text">
+            <h1 style="color:rgba(255, 255, 255, 0.877)f"></h1>
+            <!-- <p style="color: rgb(0, 0, 0); text-align: center;"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi possimus maiores sapiente voluptatem hic! At, id. Doloremque eum sed dolor enim numquam minima beatae, eligendi repudiandae exercitationem nostrum magni deserunt. </p> -->
+           
+          </div>
+    </div>
+
+
+
+
+
+
+
+      <mat-sidenav  mode="over" #sideNav>
+          <h3>Dashboard</h3>
+
+
+            <mat-list>
+                <a [routerLink]="['/applyLeave']" mat-list-item (click)="sideNav.close()" >
+                   <label>Apply Leave</label>
+                </a>
+                <a [routerLink]="['/viewLeave']" mat-list-item (click)="sideNav.close()">
+                    <label>View Leave</label>
+                </a>
+                <a [routerLink]="['/home']" mat-list-item (click)="sideNav.close()">
+                    <label>login</label>
+                  </a>
+                  <a [routerLink]="['/timesheet']" mat-list-item (click)="sideNav.close()">
+                    <label>Timesheet</label>
+                  </a>
+                  <a [routerLink]="['/list']" mat-list-item (click)="sideNav.close()">
+                    <label>Timesheet list view</label>
+                  </a>
+
+                  <a [routerLink]="['/create1']" mat-list-item (click)="sideNav.close()">
+                    <label>Timesheet user</label>
+                  </a>
+                  <a [routerLink]="['/view1']" mat-list-item (click)="sideNav.close()">
+                    <label>Timesheet list user view</label>
+                  </a>
+
+                  <a [routerLink]="['/dashboard']" mat-list-item (click)="sideNav.close()">
+                    <label>Employee dashboard</label>
+                  </a>
+                  <a [routerLink]="['/elist']" mat-list-item (click)="sideNav.close()">
+                    <label>Employee list view</label>
+                  </a>
+                   <a [routerLink]="['/usercreate']" mat-list-item (click)="sideNav.close()">
+                    <label>create Users</label>
+                  </a>
+                  <a [routerLink]="['/dataview']" mat-list-item (click)="sideNav.close()">
+                    <label>users list view</label>
+                  </a>
+
+                  <a [routerLink]="['/leave-management/create']" mat-list-item (click)="sideNav.close()">
+                    <label>Leave Management</label>
+                  </a>
+                  <a [routerLink]="['/leave-management/view']" mat-list-item (click)="sideNav.close()">
+                    <label>Leave Management list view</label>
+                  </a>
+                  <a [routerLink]="['/create']" mat-list-item (click)="sideNav.close()">
+                    <label>Leave Calender</label>
+                  </a>
+                  <a [routerLink]="['/view']" mat-list-item (click)="sideNav.close()">
+                    <label>Leave Calender view</label>
+                  </a>
+
+
+
+
+            </mat-list>
+          
+            
+     
+ 
+
+
+      
+        </mat-sidenav>
+
+
+    </mat-sidenav-container>
+
+
+
+    
+
+

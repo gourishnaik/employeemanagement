@@ -1,0 +1,94 @@
+<mat-toolbar color="primary" >
+  <h4>create users  </h4>
+</mat-toolbar>
+<br>
+
+
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center mb-5">User</h2>
+              <form [formGroup]="userForm" (ngSubmit)="userFormdata()">
+  
+                <div class="d-flex justify-content-center">
+                  <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                   <mat-label>First name</mat-label>
+                     <input type="firstname" matInput formControlName="fname" placeholder="Ex. Elon">
+                     <mat-error *ngIf="hasError('fname', 'required')">First name is required!</mat-error>
+                    <mat-error *ngIf="hasError('fname', 'maxlength')">You have more than 15 characters!</mat-error>
+                    <mat-error *ngIf="hasError('fname', 'minlength')">Please enter minimum 3 characters!</mat-error> 
+                  </mat-form-field>
+                </div>
+  
+                <div class="d-flex justify-content-center">
+                    <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                     <mat-label>Last name(Optional)</mat-label>
+                       <input type="lastname" matInput formControlName="lname" placeholder="Ex. Elon">
+                      <mat-error *ngIf="hasError('lname', 'required')">Last name is required!</mat-error> 
+                      <mat-error *ngIf="hasError('lname', 'maxlength')">You have more than 15 characters!</mat-error>
+                      <mat-error *ngIf="hasError('lname', 'minlength')">Please enter minimum 3 characters!</mat-error> 
+                    </mat-form-field>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                     <mat-label>Email</mat-label>
+                       <input type="email" matInput formControlName="email" placeholder="Ex. Elon@gmail.com">
+                      <mat-error *ngIf="hasError('email', 'required')">Email is required!</mat-error>
+                     <mat-error *ngIf="hasError('email', 'email')">Email format should be in 12345@email.com!</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                     <mat-label>Password</mat-label>
+                       <input type="password" matInput formControlName="password" placeholder="Ex. Elon12345@#$%">
+                       <mat-error *ngIf="hasError('password', 'required')">Password is required!</mat-error>
+                     <mat-error *ngIf="hasError('password', 'pattern')">Password should be strong!</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                     <mat-label>Role</mat-label>
+                       <input type="role" matInput formControlName="role" placeholder="Ex. Team Leader">
+                      <mat-error *ngIf="hasError('role', 'required')">Role is required!</mat-error>
+                   <mat-error *ngIf="hasError('role', 'maxlength')">You have more than 30 characters!</mat-error>
+                      <mat-error *ngIf="hasError('role', 'minlength')">Please enter minimum 5 characters!</mat-error> 
+                    </mat-form-field>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <mat-form-field class="example-full-width" appearance="fill" style=width:500px;>
+                     <mat-label>Designation</mat-label>
+                       <input type="designation" matInput formControlName="designation" placeholder="Ex. Angular developer">
+                    <mat-error *ngIf="hasError('designation', 'required')">designation is required!</mat-error>
+                     <mat-error *ngIf="hasError('designation', 'maxlength')">You have more than 30 characters!</mat-error>
+                      <mat-error *ngIf="hasError('designation', 'minlength')">Please enter minimum 5 characters!</mat-error> 
+                    </mat-form-field>
+                  </div>
+
+           <div class="d-flex justify-content-center">
+                    <mat-form-field appearance="fill" style=width:500px;>
+                      <mat-label>Date of Joining</mat-label>
+                       <input matInput [matDatepicker]="doj" formControlName="doj" placeholder="Ex. 02/07/1996">
+                             <mat-error *ngIf="hasError('doj', 'required')">Date of joining is required!</mat-error>
+                          <mat-datepicker-toggle matSuffix [for]="doj"></mat-datepicker-toggle>
+                          <mat-datepicker #doj></mat-datepicker>
+                    </mat-form-field>
+                </div>
+  
+                <br>
+              
+                
+                  <button type="submit" class="btn btn-success btn-block  gradient-custom-3 text-body">Create</button>&nbsp;
+               
+              <button (click)="view()" class="btn btn-danger btn-block  gradient-custom-3 text-body">View</button>&nbsp;
+              <button routerLink="/"  type ="button" class="btn btn-dark ">Home </button>&nbsp;
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+ 

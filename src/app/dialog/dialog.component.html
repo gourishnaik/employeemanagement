@@ -1,0 +1,86 @@
+<div class="dialog">
+<h1 mat-dialog-title>{{content}} leave</h1>
+<div mat-dialog-content >
+<form [formGroup]="applyLeave">
+    <!-- user name -->
+  <mat-form-field>
+      <mat-label>username</mat-label>
+      <input type="text" matInput placeholder="EX : ganesh" formControlName="username">
+  </mat-form-field>
+    <div *ngIf="submit && f['username']['errors']">
+        <span *ngIf="f['username']['errors']['required']"
+        style="color: red;
+        text-transform: capitalize;">username is must required</span>
+        <span *ngIf="f['username']['errors']['minlength'] " 
+        style="color: red;text-transform: capitalize;">
+            username have atleast 6 character
+        </span>
+<mat-error style="text-transform: capitalize;" *ngIf="submit &&f['username']['errors'] && f['username']['errors']['isValid'] " >
+    username  character not in special characters
+
+</mat-error>
+
+    </div>
+    <!-- from date -->
+    <mat-form-field   >
+        <mat-label>From Date</mat-label>
+        <input  matInput    [matDatepicker]="fromDatePicker"  formControlName="fromDate" >
+        <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #fromDatePicker></mat-datepicker>
+    </mat-form-field>
+    <span *ngIf="submit && f['fromDate']['errors'] && f['fromDate']['errors']['required']" style="color: red;text-transform: capitalize;">
+         from date must be required
+    </span>
+
+
+    <!-- to date -->
+    <mat-form-field>
+        <mat-label>To Date</mat-label>
+        <input   matInput [matDatepicker]="toDatePicker" formControlName="toDate" > 
+        <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #toDatePicker></mat-datepicker>
+    </mat-form-field>
+    <div *ngIf="submit && f['toDate']['errors'] ">
+<span *ngIf="submit && f['toDate']['errors']['required']"  style="color: red;text-transform: capitalize ;">
+    to date must be required
+</span>
+</div>
+<span *ngIf="submit&& f['toDate']['errors']&& f['toDate'] ['errors']['isError'] " 
+style="color: red; text-transform: capitalize;">
+    end date must greater than or equal to start date
+</span>
+    <!-- reason -->
+    <mat-form-field class="example-full-width" appearance="standard" >
+        <mat-label>Apply Reason</mat-label>
+        <input matInput #message maxlength="30" placeholder="Ex. I got headache" formControlName="reason">
+        <mat-hint align="start"><strong>Maximum character </strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 30</mat-hint>
+      </mat-form-field>
+      <span *ngIf="submit && f['reason']['errors']"
+      style="color: red;text-transform: capitalize;">
+    reason must required</span>
+    <span *ngIf="f['reason']['errors']&& f['reason']['errors']['maxlength']">
+        reaso must include only max character
+    </span>
+      <!-- date of submitted -->
+   
+      <!-- status of leave -->
+      <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Status</mat-label>
+        <mat-select  formControlName="status">
+            <mat-option value="emergency">Emergency</mat-option>
+            <mat-option value="general">General</mat-option>
+        </mat-select>      
+      </mat-form-field>
+      <span *ngIf="submit && f['status']['errors']"
+      style="color: red;text-transform: capitalize;">
+            status must be required
+      </span>
+      <div mat-dialog-actions align="end">
+        <button mat-button color="primary" (click)="saveData(applyLeave.value)">{{actionBtn}}</button>
+        <button mat-button color="warn" (click)="onClose()" >close</button>
+    </div>
+</form>
+
+</div>
+</div>

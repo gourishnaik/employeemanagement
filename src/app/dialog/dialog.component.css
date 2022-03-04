@@ -1,0 +1,53 @@
+
+*{
+    width: 400px !important;
+    overflow-x: hidden;
+
+}
+
+ mat-form-field{
+        width: 90% !important;
+    }
+h1{
+    text-transform: capitalize;
+    margin: 0 auto;
+}
+mat-dialog-actions{
+    display: inline-block !important;
+}
+.mat-toolbar.mat-primary {
+    background: #007bff;
+    color: #fff;
+  }
+
+
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    *{
+        width: 250px !important;
+        overflow-x: hidden;
+    }
+  
+    .dialog{
+    width: 80%;
+    }
+
+    mat-form-field{
+        width: 90% !important;
+    }
+    h1{
+        text-transform: capitalize;
+        margin: 0 auto;
+    }
+    button{
+        margin-top: -30px !important;
+    }
+    mat-label{
+        font-size: 10px;
+    }
+    span{
+        font-size: 10px;
+    }
+ }
+

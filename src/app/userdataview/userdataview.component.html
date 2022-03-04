@@ -1,0 +1,172 @@
+<mat-toolbar color="primary" >
+  <h4>USERS DETAILS PAGE  </h4>
+</mat-toolbar>
+
+
+
+
+<br>
+     <section class="app-container" style="text-align:center ">
+        <h1>
+              User Details
+        </h1>
+     </section>
+     
+
+    <div class="container">
+   <!--    <div class="inside" style=display:block;>
+        <mat-form-field [formGroup]="userForm" [style.width.%]="85">
+          <mat-icon matSuffix >search</mat-icon>
+          <input  matInput type="search" placeholder="search year here..." class="search-input" formControlName="year" >
+        </mat-form-field> -->
+        
+      </div>
+      &nbsp; &nbsp;<button (click)="createPage()" class="btn btn-success float-right" >Create</button>
+        <br><br>
+        <div class="table-responsive"> 
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th>Sl no</th>
+                     <!--  <th>ID</th> -->
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                      <th>Role</th>
+                      <th>Designation</th>
+                      <th>Date Of Joining</th>
+                      <th>Edit details</th>
+                      <th>Delete details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of user ;let i=index">
+                    <td  >{{ i+1 }}</td>
+                   <!--  <td  >{{ item.id }}</td> -->
+                    <td  >{{ item.fname }}</td>
+                    <td >{{ item.lname }}</td>
+                    <td >{{ item.email }}</td>
+                    <td >{{ item.password }}</td>
+                    <td >{{ item.role }}</td>
+                    <td >{{ item.designation }}</td>
+                    <td >{{ item.doj | date : "dd/MM/yyyy"}}</td>
+                    <td ><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm text-black btn-info" (click)="editData(item,item.id)"><mat-icon>create</mat-icon></button></td>
+                    <td ><button class="btn btn-sm text-white btn-danger" (click)="deleteData(item,item.id)"><mat-icon>delete_sweep</mat-icon></button></td>
+                    </tr>
+                   <!--  <tr *ngIf="leave.length=== 0" >No Data Found</tr>   -->
+                </tbody>
+              </table>
+</div>
+
+
+
+   <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Leave Calender</h4>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+
+        <div class="modal-body">
+          <form [formGroup]="usermodaldataForm">
+   <div class="d-flex ">
+                  <mat-form-field class="example-full-width"  style=width:300px;>
+                   <mat-label>First name</mat-label>
+                     <input type="firstname" matInput formControlName="fname" placeholder="Ex. Elon">
+                     <mat-error *ngIf="hasError('fname', 'required')">First name is required!</mat-error>
+                     <mat-error *ngIf="hasError('fname', 'maxlength')">You have more than 15 characters!</mat-error>
+                     <mat-error *ngIf="hasError('fname', 'minlength')">Please enter minimum 3 characters!</mat-error> 
+                  </mat-form-field>
+                </div>
+  
+                <div class="d-flex ">
+                    <mat-form-field class="example-full-width"  style=width:300px;>
+                     <mat-label>Last name</mat-label>
+                       <input type="lastname" matInput formControlName="lname" placeholder="Ex. Elon">
+<!--                        <mat-error *ngIf="hasError('lname', 'required')">Last name is required!</mat-error>
+ -->                      <mat-error *ngIf="hasError('lname', 'maxlength')">You have more than 15 characters!</mat-error>
+                      <mat-error *ngIf="hasError('lname', 'minlength')">Please enter minimum 3 characters!</mat-error> 
+                    </mat-form-field>
+                  </div>
+                  <div class="d-flex ">
+                    <mat-form-field class="example-full-width"  style=width:300px;>
+                     <mat-label>Email</mat-label>
+                       <input type="email" matInput formControlName="email" placeholder="Ex. Elon@gmail.com">
+                       <mat-error *ngIf="hasError('email', 'required')">Email is required!</mat-error>
+                       <mat-error *ngIf="hasError('email', 'email')">Email format should be in aaa12345@email.com!</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="d-flex ">
+                    <mat-form-field class="example-full-width"  style=width:300px;>
+                     <mat-label>Password</mat-label>
+                       <input type="password" matInput formControlName="password" placeholder="Ex. Elon12345@#$%">
+                       <mat-error *ngIf="hasError('password', 'required')">Password is required!</mat-error>
+                     <mat-error *ngIf="hasError('password', 'pattern')">Password should be strong!</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="d-flex ">
+                    <mat-form-field class="example-full-width" style=width:300px;>
+                     <mat-label>Role</mat-label>
+                       <input type="role" matInput formControlName="role" placeholder="Ex. Team Leader">
+                       <mat-error *ngIf="hasError('role', 'required')">Role is required!</mat-error>
+                       <mat-error *ngIf="hasError('role', 'maxlength')">You have more than 30 characters!</mat-error>
+                          <mat-error *ngIf="hasError('role', 'minlength')">Please enter minimum 5 characters!</mat-error> 
+                    </mat-form-field>
+                  </div>
+
+                  <div class="d-flex   ">
+                    <mat-form-field  class="example-full-width"style=width:300px;>
+                     <mat-label>Designation</mat-label>
+                       <input type="designation"  matInput formControlName="designation" placeholder="Ex. Angular developer">
+                       <mat-error *ngIf="hasError('designation', 'required')">designation is required!</mat-error>
+                       <mat-error *ngIf="hasError('designation', 'maxlength')">You have more than 30 characters!</mat-error>
+                        <mat-error *ngIf="hasError('designation', 'minlength')">Please enter minimum 5 characters!</mat-error> 
+                    </mat-form-field>
+                  </div>
+
+       
+                  <mat-label style="font-size: 12px "> Date of joining*</mat-label><br>
+                   <input  formControlName="doj" type ="date"[style.width.px]=300 name="doj" placeholder="Ex. 02/07/1996">
+                    <mat-error *ngIf="hasError('doj', 'required')">Please enter joining Date is required!</mat-error>
+                    <mat-datepicker #datepicker></mat-datepicker>
+                 
+                
+                    
+
+<!--
+                    <div >
+                      <mat-form-field appearance="fill" >
+                        <mat-label>Date of Joining</mat-label>
+
+                        <input matInput [matDatepicker]="dateoj" formControlName="doj" placeholder="Ex. 02/07/1996">
+                              <mat-error *ngIf="hasError('doj', 'required')">Please enter joining Date is required!</mat-error>
+                             <mat-datepicker-toggle matSuffix [for]="dateoj"></mat-datepicker-toggle>
+                            <mat-datepicker #dateoj></mat-datepicker>
+                      </mat-form-field>
+                  </div>
+-->
+
+
+
+
+
+           
+            </form>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" *ngIf="userdatabase"[disabled]="usermodaldataForm.invalid"  data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"(click)="updateUserData(userdatabase)"  *ngIf="userdatabase"[disabled]="usermodaldataForm.invalid" data-bs-dismiss="modal">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

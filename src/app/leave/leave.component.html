@@ -1,0 +1,87 @@
+<mat-toolbar color="primary" >
+  <h4>view leave </h4>
+</mat-toolbar>
+  
+  <!-- leave starts -->
+  <div class="content">
+  <mat-form-field appearance="standard">
+    <mat-label>search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
+    <button matSuffix mat-icon-button (click)="createLeave()" >
+      <mat-icon matSuffix >add</mat-icon>
+    </button>
+  </mat-form-field>
+<br><br>
+  <div class="mat-elevation-z8">
+    <div class="table-responsive">
+    <table mat-table [dataSource] ="dataSource" matSort class="table-responsive">
+  
+   <!-- id  Column -->
+   <ng-container matColumnDef="id" style="display: none;" >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>ID </th>
+    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+  </ng-container>
+  
+      <!-- username Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> user <br> name </th>
+        <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+      </ng-container>
+  
+      <!-- from date Column -->
+      <ng-container matColumnDef="fromdate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> from <br> date </th>
+        <td mat-cell *matCellDef="let row"> {{row.fromDate | date : 'yyyy-MM-dd'}} </td>
+      </ng-container>
+  
+      <!-- todate Column -->
+      <ng-container matColumnDef="todate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> to <br> date </th>
+        <td mat-cell *matCellDef="let row"> {{row.toDate | date: 'yyyy-MM-dd'}} </td>
+      </ng-container>
+
+     <!-- reason -->
+     <ng-container matColumnDef="reason">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> reson </th>
+        <td mat-cell *matCellDef="let row"> {{row.reason}} </td>
+      </ng-container>
+
+   <!-- submission date -->
+   <ng-container matColumnDef="dateofsubmission">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> submited <br> date</th>
+    <td mat-cell *matCellDef="let row"> {{dateSubmit| date:'yyyy-MM-dd'}} </td>
+  </ng-container>
+   <!-- status -->
+   <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> status </th>
+    <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+  </ng-container>
+   <!-- actions -->
+   <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef > actions </th>
+    <td mat-cell *matCellDef="let  row">
+    <button mat-icon-button (click)="editData(row)" >
+        <mat-icon color="primary">edit</mat-icon>
+    </button>    
+    <button mat-icon-button (click)="deleteData(row)" >
+        <mat-icon color="warn" >delete</mat-icon>
+    </button>    
+    </td>
+  </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+
+    </table>
+  </div>
+    <mat-paginator class="table-responsive"  [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
+
+
+  <!-- leave ends -->

@@ -1,0 +1,21 @@
+.hero-banner{
+    margin-top: 22px;
+    /* background-color: gray; */
+    /* background image */
+    background-image: linear-gradient(rgba(247, 241, 241, 0.1), rgba(17, 52, 92, 0.5)), url("/assets/images/hero.jpg");
+    
+    height: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(19, 19, 95);
+  }

@@ -1,0 +1,48 @@
+*{
+    width: 400px !important;
+}
+mat-form-field{
+    width: 100%;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+mat-dialog-actions{
+    display: inline-block !important;
+}
+button{
+    margin-top: -30px !important;
+}
+.mat-toolbar.mat-primary {
+    background: #007bff;
+    color: #fff;
+  }
+
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    *{
+        width: 250px !important;
+        overflow-x: hidden;
+    }
+    
+
+    mat-form-field{
+        width: 100%;
+    }
+    h1{
+        text-transform: capitalize;
+        margin: 0 auto;
+    }
+  
+ 
+    span{
+        font-size: 10px;
+    }
+ }
+
+
+
+

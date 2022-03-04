@@ -1,0 +1,250 @@
+
+  
+h4{
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-style: italic;
+
+}
+mat-sidenav-container{
+    height: 100%;
+}
+mat-sidenav{
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+    border-radius: 15px;
+    width: 300px;
+    margin-top: 2px;
+    padding: 15px;
+    margin: 0 auto;
+}
+mat-sidenav h3{
+color: white;
+text-align: center;
+}
+mat-sidenav a{
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 16px;
+}
+mat-sidenav a:hover{
+    background: white;
+    color: blue;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px lightgray;
+}
+
+.content{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    h4{
+        font-size: 15px;
+        word-spacing: 5px;
+    }
+    mat-sidenav{
+        background-color: #bdd4e7;
+        background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+        border-radius: 15px;
+        width: 200px;
+        margin-top: 2px;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    
+mat-sidenav h3{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    }
+    mat-sidenav a{
+        color: white;
+        text-decoration: none;
+        font-size: 10px !important;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    mat-sidenav a:hover{
+        background: white;
+        color: gray;
+        border-radius: 20px;
+        box-shadow: 0 4px 5px lightgray;
+    }
+    mat-sidenav mat-icon:hover{
+        color: blue !important;
+    }
+    .content{
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+ }
+ 
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    h4{
+        font-size: 20px;
+        word-spacing: 5px;
+    }
+    mat-sidenav{
+        background-color: #bdd4e7;
+        background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+        border-radius: 15px;
+        width: 200px;
+        margin-top: 2px;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    
+mat-sidenav h3{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    }
+    mat-sidenav a{
+        color: white;
+        text-decoration: none;
+        font-size: 10px !important;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    mat-sidenav a:hover{
+        background: white;
+        color: gray;
+        border-radius: 20px;
+        box-shadow: 0 4px 5px lightgray;
+    }
+    mat-sidenav mat-icon:hover{
+        color: blue !important;
+    }
+    .content{
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+ }
+ h4{
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-style: italic;
+
+}
+mat-sidenav-container{
+    height: 100%;
+}
+mat-sidenav{
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+    border-radius: 15px;
+    width: 300px;
+    margin-top: 2px;
+    padding: 15px;
+    margin: 0 auto;
+}
+mat-sidenav h3{
+color: white;
+text-align: center;
+}
+mat-sidenav a{
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 16px;
+}
+mat-sidenav a:hover{
+    background: white;
+    color: blue;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px lightgray;
+}
+
+.content{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    h4{
+        font-size: 15px;
+        word-spacing: 5px;
+    }
+    mat-sidenav{
+        background-color: #bdd4e7;
+        background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+        border-radius: 15px;
+        width: 200px;
+        margin-top: 2px;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    
+mat-sidenav h3{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    }
+    mat-sidenav a{
+        color: white;
+        text-decoration: none;
+        font-size: 10px !important;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    mat-sidenav a:hover{
+        background: white;
+        color: gray;
+        border-radius: 20px;
+        box-shadow: 0 4px 5px lightgray;
+    }
+    mat-sidenav mat-icon:hover{
+        color: blue !important;
+    }
+    .content{
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+ }
+ 
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    h4{
+        font-size: 20px;
+        word-spacing: 5px;
+    }
+    mat-sidenav{
+        background-color: #bdd4e7;
+        background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+        border-radius: 15px;
+        width: 200px;
+        margin-top: 2px;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    
+mat-sidenav h3{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    }
+    mat-sidenav a{
+        color: white;
+        text-decoration: none;
+        font-size: 10px !important;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    mat-sidenav a:hover{
+        background: white;
+        color: gray;
+        border-radius: 20px;
+        box-shadow: 0 4px 5px lightgray;
+    }
+    mat-sidenav mat-icon:hover{
+        color: blue !important;
+    }
+    .content{
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+ }

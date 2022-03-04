@@ -1,0 +1,715 @@
+{
+  "posts": [
+    {
+      "fromdate": "2022-02-27",
+      "projectname": "angular",
+      "username": "gourish naik",
+      "description": "working",
+      "fromtime": 7,
+      "id": 1
+    },
+    {
+      "fromdate": "2022-02-12",
+      "projectname": "React",
+      "username": "jay",
+      "description": "working",
+      "fromtime": 8,
+      "id": 2
+    },
+    {
+      "fromdate": "2022-02-12",
+      "projectname": "javascript",
+      "username": "max",
+      "description": "done",
+      "fromtime": 8,
+      "id": 3
+    },
+    {
+      "fromdate": "2022-02-24",
+      "projectname": "React",
+      "username": "shif",
+      "description": "done",
+      "fromtime": 9,
+      "id": 4
+    },
+    {
+      "fromdate": "2022-02-15",
+      "projectname": "javascript",
+      "username": "atish",
+      "description": "working",
+      "fromtime": 10,
+      "id": 5
+    },
+    {
+      "fromdate": "2022-02-11",
+      "projectname": "angular",
+      "username": "jayesh",
+      "description": "done",
+      "fromtime": 10,
+      "id": 6
+    },
+    {
+      "fromdate": "2022-02-11",
+      "projectname": "javascript",
+      "username": "karthik",
+      "description": "done",
+      "fromtime": 12,
+      "id": 7
+    },
+    {
+      "fromdate": "2022-02-13",
+      "projectname": "javascript",
+      "username": "shifali",
+      "description": "working",
+      "fromtime": 12,
+      "id": 8
+    },
+    {
+      "fromdate": "2022-02-12",
+      "projectname": "javascript",
+      "username": "max",
+      "description": "working",
+      "fromtime": 8,
+      "id": 9
+    },
+    {
+      "fromdate": "2022-02-25",
+      "projectname": "angular",
+      "username": "hitesh",
+      "description": "working",
+      "fromtime": 8,
+      "id": 10
+    },
+    {
+      "fromdate": "2022-02-23",
+      "projectname": "React",
+      "username": "akhilesh",
+      "description": "working",
+      "fromtime": 9,
+      "id": 11
+    },
+    {
+      "fromdate": "2022-02-28",
+      "projectname": "React",
+      "username": "rashmi",
+      "description": "working",
+      "fromtime": 9,
+      "id": 12
+    },
+    {
+      "fromdate": "2022-02-28",
+      "projectname": "React",
+      "username": "ajay naik",
+      "description": "working",
+      "fromtime": 14,
+      "id": 13
+    },
+    {
+      "fromdate": "2022-02-16",
+      "projectname": "React",
+      "username": "jackma",
+      "description": "working",
+      "fromtime": 10,
+      "id": 14
+    },
+    {
+      "fromdate": "2022-03-23T18:30:00.000Z",
+      "projectname": "React",
+      "username": "jack",
+      "description": "working",
+      "fromtime": 12,
+      "id": 15
+    }
+  ],
+  "users": [
+    {
+      "date": "2022-02-24",
+      "firstname": "gourish",
+      "lastname": "naik",
+      "email": "gourishnaik050@gmail.com",
+      "password": "ABCa1@#gnaik",
+      "role": "devloper",
+      "designation": "devloper",
+      "id": 2
+    },
+    {
+      "date": "2022-02-25",
+      "firstname": "akash",
+      "lastname": "naik",
+      "email": "akash@gmail.com",
+      "password": "abcA1@@@1@",
+      "role": "developer",
+      "designation": "backend",
+      "id": 3
+    },
+    {
+      "date": "2022-02-25",
+      "firstname": "jayesh",
+      "lastname": "naik",
+      "email": "jayesh@gmail.com",
+      "password": "jayeshA56##",
+      "role": "developer",
+      "designation": "frontend",
+      "id": 4
+    },
+    {
+      "date": "2022-02-25",
+      "firstname": "akashay",
+      "lastname": "naik",
+      "email": "akashay@gmail.com",
+      "password": "akashay####naikA1@!@!@!",
+      "role": "developer",
+      "designation": "frontend",
+      "id": 5
+    },
+    {
+      "date": "2022-02-24",
+      "firstname": "shifali",
+      "lastname": "naik",
+      "email": "shifalinaik00@gmail.com",
+      "password": "shiflaiA1454s5ab@",
+      "role": "back end",
+      "designation": "devloper",
+      "id": 6
+    }
+  ],
+  "employee": [
+    {
+      "date": "2022-02-21T18:30:00.000Z",
+      "firstname": "45",
+      "lastname": "e",
+      "email": "tr",
+      "password": "er",
+      "role": "rt",
+      "designation": "ert"
+    }
+  ],
+  "profile": {
+    "fromdate": "",
+    "Todate": "",
+    "projectname": "",
+    "username": "",
+    "description": "",
+    "fromtime": "",
+    "date": "2022-02-21T18:30:00.000Z",
+    "firstname": "45",
+    "lastname": "e",
+    "email": "tr",
+    "password": "er",
+    "role": "rt",
+    "designation": "ert"
+  },
+  "post": [
+    {
+      "username": "madan k",
+      "fromDate": "2022-02-20T18:30:00.000Z",
+      "toDate": "2022-02-23T18:30:00.000Z",
+      "reason": "i tested positive on covid",
+      "status": "general",
+      "id": 8
+    },
+    {
+      "username": "poorni",
+      "fromDate": "2022-02-03T08:00:00.000Z",
+      "toDate": "2022-02-04T08:00:00.000Z",
+      "reason": "i tested positive on covid",
+      "status": "general",
+      "submission": "2022-02-02T18:05:13.230Z",
+      "id": 9
+    },
+    {
+      "username": "anjali",
+      "fromDate": "2022-02-03T08:00:00.000Z",
+      "toDate": "2022-02-03T08:00:00.000Z",
+      "reason": "i got stomach pain",
+      "status": "emergency",
+      "id": 12
+    },
+    {
+      "username": "ema watson",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-04T08:00:00.000Z",
+      "reason": "i have a audition",
+      "status": "emergency",
+      "id": 13
+    },
+    {
+      "username": "jeevarishi",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-04T08:00:00.000Z",
+      "reason": "i got headache",
+      "status": "general",
+      "id": 14
+    },
+    {
+      "username": "madan raj",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-10T08:00:00.000Z",
+      "reason": "nothing",
+      "status": "emergency",
+      "id": 15
+    },
+    {
+      "username": "madans",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-10T08:00:00.000Z",
+      "reason": "hahahhahh hhhhh",
+      "status": "emergency",
+      "id": 16
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-07T08:00:00.000Z",
+      "toDate": "2022-02-14T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "general",
+      "id": 17
+    },
+    {
+      "username": "masaaaa",
+      "fromDate": "2022-02-04T08:00:00.000Z",
+      "toDate": "2022-02-05T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 18
+    },
+    {
+      "username": "masaaaa",
+      "fromDate": "2022-02-05T08:00:00.000Z",
+      "toDate": "2022-02-07T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 19
+    },
+    {
+      "username": "madanm",
+      "fromDate": "2022-02-11T08:00:00.000Z",
+      "toDate": "2022-02-11T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 20
+    },
+    {
+      "username": "madan kumar",
+      "fromDate": "2022-02-17T08:00:00.000Z",
+      "toDate": "2022-02-18T08:00:00.000Z",
+      "reason": "i tested positive on covid",
+      "status": "general",
+      "id": 21
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-05T08:00:00.000Z",
+      "toDate": "2022-02-05T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 22
+    },
+    {
+      "username": "madan kumar",
+      "fromDate": "2022-02-05T08:00:00.000Z",
+      "toDate": "2022-02-05T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 23
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-12T08:00:00.000Z",
+      "toDate": "2022-02-12T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 25
+    },
+    {
+      "username": "mahan gandhi",
+      "fromDate": "2022-02-12T08:00:00.000Z",
+      "toDate": "2022-02-12T08:00:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 27
+    },
+    {
+      "username": "madan solai",
+      "fromDate": "2022-02-12T18:30:00.000Z",
+      "toDate": "2022-02-13T18:30:00.000Z",
+      "reason": "sick leave",
+      "status": "emergency",
+      "id": 28
+    }
+  ],
+  "login_modules": [
+    {
+      "Name": "madan rajan",
+      "lastname": "kumar",
+      "emailid": "madan@gmail.com",
+      "password": "madan23456",
+      "mobile": 8908908907,
+      "designation": "software developer",
+      "id": 2
+    },
+    {
+      "Name": "madan ",
+      "lastname": "",
+      "emailid": "madan@gmail.com",
+      "password": "madan7890",
+      "mobile": 8098088490,
+      "designation": "front-end developer",
+      "id": 5
+    },
+    {
+      "Name": "jeevarishi",
+      "lastname": "",
+      "emailid": "jeeva@gmail.com",
+      "password": "jeeva2121",
+      "mobile": 8098088490,
+      "designation": "software developer",
+      "id": 6
+    },
+    {
+      "Name": "mahan gandhi",
+      "lastname": "",
+      "emailid": "madan@gmail.com",
+      "password": "sdjdsdkAS!!@",
+      "mobile": 9098765643,
+      "designation": "software developer",
+      "id": 7
+    },
+    {
+      "Name": "madan kumar",
+      "lastname": "",
+      "emailid": "madan@gmail.com",
+      "password": "madan8374",
+      "mobile": 9089076543,
+      "designation": "software developer",
+      "id": 8
+    },
+    {
+      "Name": "gourish",
+      "lastname": "",
+      "emailid": "gourish@gmail.com",
+      "password": "abc1234",
+      "mobile": 8217372245,
+      "designation": "developer",
+      "id": 12
+    }
+  ],
+  "userdata": [
+    {
+      "year": "2022",
+      "date": "2022-01-21",
+      "reason": "Republic Day",
+      "type": "Optional",
+      "id": 2
+    },
+    {
+      "year": "2023",
+      "date": "2022-02-15",
+      "reason": "Mahshivaratri",
+      "type": "Optional",
+      "id": 3
+    },
+    {
+      "year": "2022",
+      "date": "2022-02-25",
+      "reason": "Holi",
+      "type": "Optional",
+      "id": 4
+    },
+    {
+      "year": "2022",
+      "date": "2022-04-30T18:30:00.000Z",
+      "reason": "Good Friday",
+      "type": "Optional",
+      "id": 5
+    },
+    {
+      "year": "2022",
+      "date": "2022-04-30T18:30:00.000Z",
+      "reason": "May Day/Labor Day",
+      "type": "Mandatory",
+      "id": 6
+    },
+    {
+      "year": "2022",
+      "date": "2022-07-09T18:30:00.000Z",
+      "reason": "Id-ul-Zuha (Bakrid)*",
+      "type": "Mandatory",
+      "id": 8
+    },
+    {
+      "year": "2022",
+      "date": "2022-08-14T18:30:00.000Z",
+      "reason": "Independence Day",
+      "type": "Mandatory",
+      "id": 9
+    },
+    {
+      "year": "2022",
+      "date": "2022-02-12",
+      "reason": "Janmashtami/Krishna Jayanthi",
+      "type": "Optional",
+      "id": 10
+    },
+    {
+      "year": "2022",
+      "date": "2022-02-02",
+      "reason": "Ganesh Chaturthi/Vinayaka Chaturti",
+      "type": "Optional",
+      "id": 11
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-01T18:30:00.000Z",
+      "reason": "Gandhi Jayanthi",
+      "type": "Mandatory",
+      "id": 12
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-04T18:30:00.000Z",
+      "reason": "Dussehra/Vijaya Dahami",
+      "type": "Mandatory",
+      "id": 13
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-23T18:30:00.000Z",
+      "reason": "Deepavali",
+      "type": "Mandatory",
+      "id": 14
+    },
+    {
+      "year": "2022",
+      "date": "2022-02-10",
+      "reason": "Karnataka Rajyotsava",
+      "type": "Mandatory",
+      "id": 15
+    },
+    {
+      "year": "2022",
+      "date": "2022-12-24T18:30:00.000Z",
+      "reason": "Christmas Day",
+      "type": "Mandatory",
+      "id": 16
+    }
+  ],
+  "leave-claender": [
+    {
+      "year": "2022",
+      "date": "2022-01-25T18:30:00.000Z",
+      "reason": "Republic Day",
+      "type": "Mandatory",
+      "id": 2
+    },
+    {
+      "year": "2022",
+      "date": "2022-02-28T18:30:00.000Z",
+      "reason": "Mahshivaratri",
+      "type": "Optional",
+      "id": 3
+    },
+    {
+      "year": "2022",
+      "date": "2022-03-17T18:30:00.000Z",
+      "reason": "Holi",
+      "type": "Optional",
+      "id": 4
+    },
+    {
+      "year": "2022",
+      "date": "2022-04-30T18:30:00.000Z",
+      "reason": "Good Friday",
+      "type": "Optional",
+      "id": 5
+    },
+    {
+      "year": "2022",
+      "date": "2022-04-30T18:30:00.000Z",
+      "reason": "May Day/Labor Day",
+      "type": "Mandatory",
+      "id": 6
+    },
+    {
+      "year": "2022",
+      "date": "2022-05-02T18:30:00.000Z",
+      "reason": "Id-ul-Fitr (Ramzan)*",
+      "type": "Mandatory",
+      "id": 7
+    },
+    {
+      "year": "2022",
+      "date": "2022-07-09T18:30:00.000Z",
+      "reason": "Id-ul-Zuha (Bakrid)*",
+      "type": "Mandatory",
+      "id": 8
+    },
+    {
+      "year": "2022",
+      "date": "2022-08-14T18:30:00.000Z",
+      "reason": "Independence Day",
+      "type": "Mandatory",
+      "id": 9
+    },
+    {
+      "year": "2022",
+      "date": "2022-08-18T18:30:00.000Z",
+      "reason": "Janmashtami/Krishna Jayanthi",
+      "type": "Optional",
+      "id": 10
+    },
+    {
+      "year": "2022",
+      "date": "2022-08-30T18:30:00.000Z",
+      "reason": "Ganesh Chaturthi/Vinayaka Chaturti",
+      "type": "Optional",
+      "id": 11
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-01T18:30:00.000Z",
+      "reason": "Gandhi Jayanthi",
+      "type": "Mandatory",
+      "id": 12
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-04T18:30:00.000Z",
+      "reason": "Dussehra/Vijaya Dahami",
+      "type": "Mandatory",
+      "id": 13
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-23T18:30:00.000Z",
+      "reason": "Deepavali",
+      "type": "Mandatory",
+      "id": 14
+    },
+    {
+      "year": "2022",
+      "date": "2022-10-31T18:30:00.000Z",
+      "reason": "Kannada Rajyotsava",
+      "type": "Mandatory",
+      "id": 15
+    },
+    {
+      "year": "2022",
+      "date": "2022-12-24T18:30:00.000Z",
+      "reason": "Christmas Day",
+      "type": "Mandatory",
+      "id": 16
+    },
+    {
+      "year": "2021",
+      "date": "2021-12-24T18:30:00.000Z",
+      "reason": "Christmas Day",
+      "type": "Mandatory",
+      "id": 17
+    },
+    {
+      "year": "2020",
+      "date": "2020-01-25T18:30:00.000Z",
+      "reason": "Republic Day",
+      "type": "Mandatory",
+      "id": 18
+    },
+    {
+      "year": "2018",
+      "date": "2018-03-13T07:00:00.000Z",
+      "reason": "sick leave",
+      "type": "Mandatory",
+      "id": 19
+    }
+  ],
+  "timesheet": [
+    {
+      "date": "2022-01-26T18:30:00.000Z",
+      "project": "cms website",
+      "emp_name": "rihan",
+      "description": "testing started",
+      "no_of_hrs": "4",
+      "id": 8
+    },
+    {
+      "date": "2022-02-07T18:30:00.000Z",
+      "project": "ecommerce",
+      "emp_name": "nitin",
+      "description": "test success",
+      "no_of_hrs": "4",
+      "id": 9
+    },
+    {
+      "date": "2022-02-07T18:30:00.000Z",
+      "project": "magento plugin",
+      "emp_name": "dipak",
+      "description": "working on event hooks",
+      "no_of_hrs": "6",
+      "id": 10
+    },
+    {
+      "date": "2022-02-07T18:30:00.000Z",
+      "project": "web services",
+      "emp_name": "siya",
+      "description": "response handling",
+      "no_of_hrs": "5",
+      "id": 11
+    },
+    {
+      "date": "2022-02-08T18:30:00.000Z",
+      "project": "api testing",
+      "emp_name": "rihan",
+      "description": "working properly",
+      "no_of_hrs": "4",
+      "id": 12
+    }
+  ],
+  "leave-management": [
+    {
+      "username": "moin",
+      "from_date": "2022-02-20T18:30:00.000Z",
+      "to_date": "2022-02-22T18:30:00.000Z",
+      "reason": "something important",
+      "status": "Emergency",
+      "id": 3
+    },
+    {
+      "username": "mukesh mishra",
+      "from_date": "2022-02-07T18:30:00.000Z",
+      "to_date": "2022-02-09T18:30:00.000Z",
+      "reason": "nothing",
+      "status": "General",
+      "id": 5
+    },
+    {
+      "username": "jack",
+      "from_date": "2022-03-08T18:30:00.000Z",
+      "to_date": "2022-03-09T18:30:00.000Z",
+      "reason": "not well",
+      "status": "Emergency",
+      "id": 6
+    }
+  ],
+  "userdb": [
+    {
+      "fname": "Mohammed",
+      "lname": "hanif",
+      "email": "hanifhoney12345@gmail.com",
+      "password": "Hanif12345@",
+      "role": "Team Manager",
+      "designation": "react developer",
+      "doj": "2022-01-22",
+      "id": 1
+    },
+    {
+      "fname": "madan",
+      "lname": "kumar",
+      "email": "madan@gmail.com",
+      "password": "abcA!@123",
+      "role": "leader",
+      "designation": "react",
+      "doj": "2022-02-25",
+      "id": 2
+    }
+  ]
+}

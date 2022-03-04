@@ -1,0 +1,76 @@
+<mat-toolbar color="primary" >
+  <h4>Employee Leave Management </h4>
+</mat-toolbar>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center mt-5 mx-auto">
+            <mat-card class="example-card"> 
+                    <form [formGroup]="leave_form" (ngSubmit)="submitData()" class="example-form" autocomplete="off">       
+                        <mat-card-content>
+                            <div class="m-3 fs-5 ">
+                              <small *ngIf="success_msg" class="success-msg fw-bold">Record has been added successfully
+                                <span><i class="fa fa-check-circle" style="color:green;"></i></span>Loading Dashboard...  <span class="spinner-border text-success" ></span> 
+                            </small>
+                            </div>
+                         
+                          <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="username" formControlName="username"maxlength = "18" >
+                            <mat-error *ngIf="haserror('username','required') ">username must required</mat-error>
+                            <mat-error *ngIf="haserror('username','pattern') ">username must strong</mat-error>
+                            <mat-error *ngIf="haserror('username','minlength') ">username must 4 characters</mat-error>
+                            <mat-error *ngIf="haserror('username','maxlength')">username must 15 characters</mat-error>
+                          </mat-form-field>
+                          
+                          
+                          <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>From Date</mat-label>
+                            <input matInput formControlName="from_date" [matDatepicker]="picker"  placeholder="">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>  
+                            <mat-error *ngIf="haserror('from_date','required')  ">fromdate must required</mat-error>   
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>To Date</mat-label>
+                            <input matInput formControlName="to_date" [matDatepicker]="picker1"  placeholder="">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>  
+                            <mat-error *ngIf="haserror('to_date','required')  ">to_date must required</mat-error>                         
+                            <mat-error *ngIf="haserror('to_date','isNot')  ">to_date must greater than equal to fromdate</mat-error>                 
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Status</mat-label>
+                            <mat-select formControlName="status" >   
+                                <mat-option value="Emergency">Emergency leave</mat-option>
+                                <mat-option value="General">General leave</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="haserror('status','required')  ">status must required</mat-error>
+                          </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Reason</mat-label>
+                          <textarea matInput placeholder="Reason..." formControlName="reason"></textarea>
+                          <mat-error *ngIf="haserror('reason','required')  ">reason must required</mat-error>
+                          <mat-error *ngIf="haserror('reason','pattern')  ">reason must valid</mat-error>
+                        </mat-form-field>
+
+                        
+                </mat-card-content>
+                <mat-card-actions>
+                    <button type="submit" 
+                    mat-raised-button [disabled]="leave_form.invalid" class="btn btn-success">SAVE</button>
+                  <button routerLink="/leave-management/view"class="btn btn-danger" mat-button>BACK</button>
+                  <button routerLink="/"class="btn btn-dark" mat-button>HOME</button>
+                </mat-card-actions>
+
+            </form>        
+              </mat-card>
+        </div>
+    </div>
+</div>

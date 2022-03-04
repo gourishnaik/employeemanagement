@@ -1,0 +1,35 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  ::ng-deep .mat-datepicker-content .mat-calendar{
+    width: unset !important;
+    height: unset !important;
+    
+}
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+h4{
+  font-size: 20px;
+  height: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}

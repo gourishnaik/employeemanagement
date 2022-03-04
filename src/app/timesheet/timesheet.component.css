@@ -1,0 +1,35 @@
+.mat-form-field {
+    padding: 16px;
+}
+
+.hours{
+    border-radius: 12px;
+    width: 200px;
+    height: 40px;
+}
+h4{
+    font-size: 20px;
+    height: auto;
+    width: 100%;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+  }
+  
+.mat-toolbar.mat-primary {
+    background: #007bff;
+    color: #fff;
+    padding: 20px;
+  }
+
+.pagination{
+    padding: 20px 16px;
+    float: right;
+    font-size: 16px;
+}
+.pagination ::ng-deep .ngx-pagination .current {
+    background: red;
+}
+
+
+

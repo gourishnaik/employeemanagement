@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  
+}
+.mat-cell{
+  padding: 10px;
+}
+
+::ng-deep .mat-badge-content { 
+  background: rgb(212, 202, 202) !important; 
+  color: rgba(46, 41, 41, 0.705) !important 
+}
+h4{
+  font-size: 20px;
+  height: auto;
+  width: 100%;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+}

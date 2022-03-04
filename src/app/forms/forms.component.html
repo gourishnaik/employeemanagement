@@ -1,0 +1,36 @@
+<form action="" [formGroup]="mailForm">
+    <mat-form-field appearance="standard">
+        <input type="text" matInput formControlName="mailid">
+    </mat-form-field>
+    <div *ngIf="submit&& f['mailid']['errors'] " >
+        <mat-error *ngIf="f['mailid']['errors']['required'] " >
+            mail id must
+        </mat-error>
+        <mat-error *ngIf="f['mailid']['errors']['isTaken'] " >
+            mail id already taken
+        </mat-error>
+    </div>
+    <button mat-button (click)="submitForm(mailForm.value)">save</button>
+</form>
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput type="text"  [(ngModel)]="filterData" >
+ 
+  </mat-form-field>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>date</th>
+            <th>designation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of submission | filter:filterData  " >
+            <td>{{user.name}} </td>
+            <td>{{user.date }} </td>
+            <td>{{user.designation}} </td>
+        </tr>
+    </tbody>
+</table>

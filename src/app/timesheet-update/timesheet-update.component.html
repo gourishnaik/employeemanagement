@@ -1,0 +1,65 @@
+<mat-toolbar color="primary" >
+  <h4>Employee Timesheet update </h4>
+</mat-toolbar>
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 text-center mt-5 mx-auto">
+          <mat-card class="example-card"> 
+              
+
+                  <form [formGroup]="update_form" (ngSubmit)="updateFormData()" class="example-form" autocomplete="off">       
+                      <mat-card-content>
+                      <div class="m-3 fs-5 ">
+                        <small *ngIf="success_message" class="success-msg fw-bold">updated successfully!! loading...<span
+                          class="spinner-border text-success"></span> </small>
+                      </div>
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Employee Name</mat-label>
+                          <mat-select formControlName="emp_name" >   
+                            <mat-option  *ngFor="let emp of emp_name_list" [value]="emp.emp_name" >{{ emp.emp_name }}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Project</mat-label>
+                          <input matInput  formControlName="project" placeholder="name">
+                          
+                      </mat-form-field>
+                      
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>Choose a date</mat-label>
+                          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                          
+                        </mat-form-field>
+                        
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+                          <mat-label>no. of hours</mat-label>
+                          <input matInput placeholder="--:--" formControlName="no_of_hrs" placeholder="hours">
+                      </mat-form-field>
+          
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput placeholder="description..." formControlName="description" placeholder="description..."></textarea>
+                        
+                      </mat-form-field>
+                    
+              </mat-card-content>
+              <mat-card-actions>
+                  <button type="submit" [disabled]="update_form.invalid"
+                  mat-raised-button color="primary">SAVE</button>
+                <button routerLink="/view1" mat-button>BACK</button>
+              </mat-card-actions>
+          </form>        
+            </mat-card>
+      </div>
+  </div>
+</div>
