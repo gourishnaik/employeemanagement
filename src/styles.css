@@ -1,6 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-@import '~font-awesome/css/font-awesome.css';
-
+.custom-snackbar {
+    background-color: black !important;   
+    color: white !important;            
+    max-width: 500px !important;         
+    margin: 0 auto !important;           
+    text-align: center !important;       
+    border-radius: 4px !important;       
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
